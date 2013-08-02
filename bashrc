@@ -39,6 +39,7 @@ alias ga="g add ."
 alias gai="g add -i"
 alias gd="g diff"
 alias gc="g commit -m"
+alias gac="g add .;g commit -m"
 alias gp="g push"
 
 alias github="chrome \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed 's/git:/http:/g'\`"
