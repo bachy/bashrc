@@ -16,6 +16,11 @@ source ~/Developer/BASH/liquidprompt/liquidprompt
 alias kb-laptop="echo 1 | sudo tee /sys/module/hid_apple/parameters/iso_layout"
 alias kb-external="echo 0 | sudo tee /sys/module/hid_apple/parameters/iso_layout"
 
+alias r="cd /"
+alias h="cd ~"
+alias sites="cd ~/Sites"
+alias dev="cd ~/Developer"
+
 alias s="sudo"
 alias ls="ls -lsh --color=always"
 alias la="ls -lsha --color=always"
@@ -30,12 +35,13 @@ alias dcc="d cc all"
 
 alias g="git"
 alias gs="g status"
-alias ga="g add -i"
+alias ga="g add ."
+alias gai="g add -i"
 alias gd="g diff"
-alias gc="g commit"
+alias gc="g commit -m"
 alias gp="g push"
 
-alias github="chromium \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed 's/git:/http:/g'\`"
+alias github="chrome \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed 's/git:/http:/g'\`"
 
 
 #Cree le repertoire et va dedans
@@ -82,4 +88,17 @@ function gojo() {
     rar)
       unrar x "$FILENAME";;
   esac
+}
+
+
+# go back x directories
+b() {
+    str=""
+    count=0
+    while [ "$count" -lt "$1" ];
+    do
+        str=$str"../"
+        let count=count+1
+    done
+    cd $str
 }
