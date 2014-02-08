@@ -17,6 +17,8 @@ fi
 
 source ~/.liquidprompt/liquidprompt
 
+alias kb-conf="/home/bachir/.kb_conf.sh"
+alias kb-xmodmap="xmodmap /home/bachir/.Xmodmap"
 alias kb-laptop="echo 1 | sudo tee /sys/module/hid_apple/parameters/iso_layout"
 alias kb-external="echo 0 | sudo tee /sys/module/hid_apple/parameters/iso_layout"
 alias kb-fnmode="echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode"
@@ -62,7 +64,7 @@ alias gac="g add .;g commit -m"
 alias gp="g push"
 alias gb="g branch"
 alias gbm="gb -m"
-alias ggraph="git log --graph --abbrev-commit --decorate=no --format=format:' %C(bold yellow)%ai%C(reset) %C(yellow)(%ar)%C(reset)%C(auto)%+d%C(reset)%n'' %C(dim white)%an%C(reset)%n'' %C(bold white)%s%C(reset)%n'' %C(blue)%H%C(reset)%n' --all"
+alias ggraph="git log --graph --abbrev-commit --decorate=no --format=format:'%C(bold yellow)%ai%C(reset) %C(yellow)(%ar)%C(reset)%C(auto)%+d%C(reset)%n''%C(dim white)%an%C(reset)%n''%C(bold white)%B%C(reset)%C(blue)%H%C(reset)%n' --all"
 alias gr="g remote"
 alias grr="gr rename"
 alias github="chrome \`git remote -v | grep github.com | grep fetch | head -1 | field 2 | sed 's/git:/http:/g'\`"
